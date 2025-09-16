@@ -24,6 +24,12 @@ func (z *Int) SetByte(b byte) *Int {
 	return z
 }
 
+func (z *Int) Copy() *Int {
+	ret := NewInt(0)
+	ret.Set(z.Int)
+	return ret
+}
+
 // SetBytes 重写标准方法以返回 biq.Int 类型
 // 保持与标准库兼容性的同时支持链式调用
 // func (z *Int)
