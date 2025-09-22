@@ -37,7 +37,9 @@ func (z *Int) SetBytes(buf []byte) *big.Int {
 	if z.Int == nil {
 		z.Int = big.NewInt(1)
 	}
-
+	if z.Int.Int64() == 0 {
+		z.Int = big.NewInt(1)
+	}
 	z.Int.Div(big.NewInt(0).SetBytes(buf), z.Int)
 	return z.Int
 }
