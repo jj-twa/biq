@@ -52,14 +52,14 @@ func (z *Int) Set(x *big.Int) *Int {
 	return z
 }
 
-func (z *Int) SetInt64(x int64) *Int {
+func (z *Int) SetInt64(x int64) *big.Int {
 	z.Int.SetInt64(x)
-	return z
+	return z.Int
 }
 
-func (z *Int) SetUint64(x uint64) *Int {
+func (z *Int) SetUint64(x uint64) *big.Int {
 	z.Int.SetUint64(x)
-	return z
+	return z.Int
 }
 
 func (z *Int) SetString(s string, base int) (*Int, bool) {
